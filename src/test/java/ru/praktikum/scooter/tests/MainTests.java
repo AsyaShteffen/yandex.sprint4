@@ -1,6 +1,6 @@
-package Tests;
+package ru.praktikum.scooter.tests;
 
-import PageObjects.MainPage;
+import ru.praktikum.scooter.pageobjects.MainPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,6 +1,6 @@
-package Tests;
+package ru.praktikum.scooter.tests;
 
-import PageObjects.OrderPage;
+import ru.praktikum.scooter.pageobjects.OrderPage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,20 +58,31 @@ public class OrderTests {
         orderPage.clickOrderButtonMiddle();
         createOrder();
     }
-
-    private void createOrder() {
-        orderPage.confirmCookies();
+    //метод для заполнения информации о пользователе
+    private void setUserInfo() {
         orderPage.setName(name);
         orderPage.setSurname(surname);
         orderPage.setAdress(address);
         orderPage.setMetro();
         orderPage.setPhoneNumber(phone);
-        orderPage.clickNextButton();
+    }
+    // метод для заполнения информации о заказе
+    private void setOrderInfo() {
         orderPage.setDeliveryDate();
         orderPage.setDurationOrder();
+    }
+    // метод для заказа + проверки успешности
+    private void checkOrderConfirmation() {
         orderPage.clickOrderScooterButton();
         orderPage.clickYesInDialog();
         orderPage.isPanelVisible();
+    }
+    private void createOrder() {
+        orderPage.confirmCookies();
+        setUserInfo();
+        orderPage.clickNextButton();
+        setOrderInfo();
+        checkOrderConfirmation();
     }
 
     // Закрыть браузер
