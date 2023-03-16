@@ -1,4 +1,4 @@
-package ru.praktikum.scooter.tests;
+package ru.praktikum.scooter;
 
 import ru.praktikum.scooter.pageobjects.MainPage;
 import org.junit.After;
